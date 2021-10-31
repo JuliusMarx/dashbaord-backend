@@ -1,0 +1,25 @@
+{
+  "name": "dashboard-backend",
+  "version": "1.0.0",
+  "description": "dashboard-backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuliusMarx/dashboard-backend.git"
+  },
+  "author": "JMarx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuliusMarx/dashboard-backend/issues"
+  },
+  "homepage": "https://github.com/JuliusMarx/dashboard-backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
