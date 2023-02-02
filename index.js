@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', (req, res) => {
-    res.send('Welcome, please navigate to /api/users to read userdata.')
+    res.send('Welcome, please navigate to /api/users for userdata.')
 })
 
 app.get('/api/users', (req, res) => {
