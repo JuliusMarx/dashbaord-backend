@@ -20,6 +20,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', (req, res) => {
+    res.set('Access-Control-Allow-Origin', 'http://localhost:4200'); //set
     res.send('Welcome, please navigate to /api/users for userdata.')
 })
 
@@ -31,11 +32,13 @@ app.get('/api/users', (req, res) => {
         res.send(JSON.parse(data));
     });*/
 
+    res.set('Access-Control-Allow-Origin', 'http://localhost:4200'); //set
     res.send(users);
 });
 
 // conv for specific user endpoint: /api/users/1
 app.get('/api/users/:id', (req, res) => {
+    res.set('Access-Control-Allow-Origin', 'http://localhost:4200'); //set
     const user = users.find(u => u.id === parseInt(req.params.id))
     if (!user) return res.status(404).send('User not found'); // 404
     res.send(user)
@@ -43,6 +46,7 @@ app.get('/api/users/:id', (req, res) => {
 
 // create a new user
 app.post('/api/users', (req, res) => {
+    res.set('Access-Control-Allow-Origin', 'http://localhost:4200'); //set
 
     // validate user
     const { error } = validateUser(req.body); // object destructuring for result.err
@@ -59,6 +63,7 @@ app.post('/api/users', (req, res) => {
 
 // update a user
 app.put('/api/users/:id', (req, res) => {
+    res.set('Access-Control-Allow-Origin', 'http://localhost:4200'); //set
     // Look up user
     const user = users.find(u => u.id === parseInt(req.params.id))
     // if not existing, return 404
@@ -77,6 +82,7 @@ app.put('/api/users/:id', (req, res) => {
 
 // delete a user
 app.delete('/api/users/:id', (req, res) => {
+    res.set('Access-Control-Allow-Origin', 'http://localhost:4200'); //set
     // Look up user
     const user = users.find(u => u.id === parseInt(req.params.id))
     // if not existing, return 404
